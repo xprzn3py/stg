@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이상한 관상쟁이 체험</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+      margin: 0;
+    }
+
+    .page {
+      display: none;
+      padding: 50px 20px;
+    }
+
+    .active { display: block; }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      width: 60%;
+      margin: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    img {
+      width: 250px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    textarea {
+      width: 80%;
+      height: 90px;
+      margin-top: 15px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #7b1fa2, #512da8);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    h2 {
+      color: #4a148c;
+    }
+
+    .result {
+      margin-top: 20px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:20px;
+    }
+
+    .speech {
+      background: #fff3e0;
+      padding: 15px;
+      border-radius: 15px;
+      position: relative;
+      max-width: 300px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .speech::after {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 20px;
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent #fff3e0 transparent transparent;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page active" id="page1">
+  <div class="card">
+    <img src="images/im1.png"><br>
+    <p>이 사람의 관상을 봐주세요</p>
+    <textarea></textarea><br>
+    <button onclick="nextPage(2)">→</button>
+  </div>
+</div>
+
+<div class="page" id="page2">
+  <div class="card">
+    <h2>이상한 관상쟁이는 이렇게 관상을 보았습니다.</h2>
+    <div class="result">
+      <img src="images/strange gwan.png">
+      <div class="speech">당신의 모습이 매우 수척해 보이니 당신만큼 천한 족속도 없겠소.</div>
+    </div>
+    <button onclick="nextPage(3)">→</button>
+  </div>
+</div>
+
+<div class="page" id="page3">
+  <div class="card">
+    <img src="images/im2.png"><br>
+    <p>이 사람의 관상을 봐주세요</p>
+    <textarea></textarea><br>
+    <button onclick="nextPage(4)">→</button>
+  </div>
+</div>
+
+<div class="page" id="page4">
+  <div class="card">
+    <h2>이상한 관상쟁이는 이렇게 관상을 보았습니다.</h2>
+    <div class="result">
+      <img src="images/strange gwan.png">
+      <div class="speech">아름답기도 하고 못나기도 하다.</div>
+    </div>
+    <button onclick="nextPage(5)">→</button>
+  </div>
+</div>
+
+<div class="page" id="page5">
+  <div class="card">
+    <img src="images/im3.png"><br>
+    <p>이 사람의 관상을 봐주세요</p>
+    <textarea></textarea><br>
+    <button onclick="nextPage(6)">→</button>
+  </div>
+</div>
+
+<div class="page" id="page6">
+  <div class="card">
+    <h2>이상한 관상쟁이는 이렇게 관상을 보았습니다.</h2>
+    <div class="result">
+      <img src="images/strange gwan.png">
+      <div class="speech">당신의 모습이 살쪄 보이니, 당신만큼 귀한 족속도 드물 것이오.</div>
+    </div>
+    <button onclick="nextPage(7)">→</button>
+  </div>
+</div>
+
+<div class="page" id="page7">
+  <div class="card">
+    <img src="images/im4.png"><br>
+    <p>이 사람의 관상을 봐주세요</p>
+    <textarea></textarea><br>
+    <button onclick="nextPage(8)">→</button>
+  </div>
+</div>
+
+<div class="page" id="page8">
+  <div class="card">
+    <h2>이상한 관상쟁이는 이렇게 관상을 보았습니다.</h2>
+    <div class="result">
+      <img src="images/strange gwan.png">
+      <div class="speech">눈이 밝은 사람이다.</div>
+    </div>
+    <button onclick="nextPage(9)">→</button>
+  </div>
+</div>
+
+<div class="page" id="page9">
+  <div class="card">
+    <h2>이상한 관상쟁이는 왜 이렇게 관상을 보았을까요?<br><br>
+    궁금하지 않나요?<br><br>
+    이제 다시 매거진을 봐주세요</h2>
+  </div>
+</div>
+
+<script>
+function nextPage(n) {
+  const pages = document.querySelectorAll('.page');
+  pages.forEach(p => p.classList.remove('active'));
+  document.getElementById('page' + n).classList.add('active');
+}
+</script>
+
+</body>
+</html>
